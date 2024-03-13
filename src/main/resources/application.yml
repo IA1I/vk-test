@@ -1,0 +1,28 @@
+app:
+  base-url: https://jsonplaceholder.typicode.com
+
+spring:
+  h2:
+    console.enabled: true
+    console:
+      path: /h2-console
+      settings.trace: false
+      settings.web-allow-others: false
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:vktest
+    username: h2
+    password: password
+#    schema: database/init_db.sql
+  application:
+    name: vk-test
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+
+server:
+  port: 8080
